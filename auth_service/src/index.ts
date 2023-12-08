@@ -2,13 +2,16 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import 'dotenv/config';
-
+import { connectToDatabase } from './db/db';
 
 const app = express();
 app.use(cors());
 app.use(helmet());
 
 
+
+// Initializes database connection
+connectToDatabase();
 
 const port = process.env.PORT
 
